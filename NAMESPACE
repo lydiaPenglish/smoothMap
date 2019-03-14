@@ -2,5 +2,6 @@
 
 export("%>%")
 export(team_1)
+export(team_4)
 importFrom(magrittr,"%>%")
 importFrom(methods,as)
