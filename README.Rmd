@@ -1,43 +1,45 @@
 ---
-output: github_document
+title: "STAT585_LAB3"
+author: "Team 4"
+output:
+  html_document:
+    keep_md: True
 ---
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
+## Link
+[https://github.com/lydiaPenglish/smoothMap](https://github.com/lydiaPenglish/smoothMap)
+
+## Team Members
+- Lydia English
+- Yang Qiao
+- Xiyuan Sun
 
 ```{r setup, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  fig.path = "man/figures/README-",
-  out.width = "100%"
-)
+knitr::opts_chunk$set(warning = F, message = F, fig.align = "center")
 ```
-# smoothMap
 
-The goal of smoothMap is to generate a function to help map files
+## Description
+The goal of `smoothMap` is to generate a function to help map files.
 
 ## Installation
-
-You can install the released version of smoothMap from [CRAN](https://CRAN.R-project.org) with:
-
+You can install the released version of Mygit from [Github](https://github.com/lydiaPenglish/smoothMap) with:
 ``` r
-install.packages("smoothMap")
+devtools::install_github("lydiaPenglish/smoothMap")
 ```
 
 ## Example
-
 This is a basic example which shows you how to solve a common problem:
 
 ```{r example}
-## basic example code
+library(smoothMap)
+filename <- system.file("extdata", "gadm36_AUS_1.shp", package = "smoothMap")
+
+dat <- team_1(filename, tolerance = 0.1)
+if (require(ggplot2))
+  ggplot(dat, aes(x = long, y = lat, group = group)) +
+    geom_polygon(color = "black", fill = "white", size = 0.2) +
+    labs(x = "Longitude", y = "Latitude", title = "Australia") +
+    coord_fixed() +
+    theme_bw() +
+    theme(plot.title = element_text(hjust = 0.5))
 ```
-
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
-
-```{r cars}
-summary(cars)
-```
-
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date.
-
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub!
