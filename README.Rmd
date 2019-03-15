@@ -34,12 +34,12 @@ This is a basic example which shows you how to use the functions in `smoothMap`:
 library(smoothMap)
 library(ggplot2)
 
-mex_file <- system.file("extdata", "gadm36_MEX_1.shp", package = "smoothMap")
-mex_data <- team_1(mex_file, tolerance = 0.05)
-ggplot(mex_data, aes(x = long, y = lat, group = group)) +
+isl_file <- system.file("extdata", "gadm36_ISL_1.shp", package = "smoothMap")
+isl_data <- team_1(isl_file, tolerance = 0.01)
+ggplot(isl_data, aes(x = long, y = lat, group = group)) +
   geom_polygon(color = "black", fill = "white", size = 0.2) +
-  labs(x = "Longitude", y = "Latitude", title = "Mexico") +
-  coord_fixed() +
+  labs(x = "Longitude", y = "Latitude", title = "Iceland") +
+  coord_quickmap() +
   theme_bw() +
   theme(plot.title = element_text(hjust = 0.5))
 
@@ -48,7 +48,7 @@ pan_data <- team_4(pan_file, tolerance = 0.01)
 ggplot(pan_data, aes(x = long, y = lat, group = group)) +
   geom_polygon(color = "black", fill = "white", size = 0.2) +
   labs(x = "Longitude", y = "Latitude", title = "Panama") +
-  coord_fixed() +
+  coord_quickmap() +
   theme_bw() +
   theme(plot.title = element_text(hjust = 0.5))
 ```

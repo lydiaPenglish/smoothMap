@@ -20,13 +20,13 @@ Read a shape file and create a data frame by reforming geometry column to longit
 See \href{https://github.com/lydiaPenglish/smoothMap}{smoothMap}.
 }
 \examples{
-filename <- system.file("extdata", "gadm36_MEX_1.shp", package = "smoothMap")
-dat <- team_1(filename, tolerance = 0.1)
+filename <- system.file("extdata", "gadm36_ISL_1.shp", package = "smoothMap")
+dat <- team_1(filename, tolerance = 0.01)
 if (require(ggplot2))
   ggplot(dat, aes(x = long, y = lat, group = group)) +
     geom_polygon(color = "black", fill = "white", size = 0.2) +
-    labs(x = "Longitude", y = "Latitude", title = "Mexico") +
-    coord_fixed()
+    labs(x = "Longitude", y = "Latitude", title = "Iceland") +
+    coord_quickmap()
 }
 \author{
 Yang Qiao

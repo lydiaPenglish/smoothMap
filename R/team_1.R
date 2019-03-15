@@ -1,6 +1,5 @@
 if(getRversion() >= "2.15.1")  utils::globalVariables(c(".", "geometry"))
 
-
 #' Create a geometry data frame.
 #' @description Read a shape file and create a data frame by reforming geometry column to longitude, latitude, order, group.
 #'
@@ -15,13 +14,13 @@ if(getRversion() >= "2.15.1")  utils::globalVariables(c(".", "geometry"))
 #' @author Yang Qiao
 #'
 #' @examples
-#' filename <- system.file("extdata", "gadm36_MEX_1.shp", package = "smoothMap")
-#' dat <- team_1(filename, tolerance = 0.1)
+#' filename <- system.file("extdata", "gadm36_ISL_1.shp", package = "smoothMap")
+#' dat <- team_1(filename, tolerance = 0.01)
 #' if (require(ggplot2))
 #'   ggplot(dat, aes(x = long, y = lat, group = group)) +
 #'     geom_polygon(color = "black", fill = "white", size = 0.2) +
-#'     labs(x = "Longitude", y = "Latitude", title = "Mexico") +
-#'     coord_fixed()
+#'     labs(x = "Longitude", y = "Latitude", title = "Iceland") +
+#'     coord_quickmap()
 team_1 <- function(file, tolerance = 0.1) {
   poly2df <- function(feature) {
     feature %>%
