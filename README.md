@@ -20,7 +20,7 @@ output:
 The goal of `smoothMap` is to generate a function to help map files.
 
 ## Installation
-You can install the released version of Mygit from [Github](https://github.com/lydiaPenglish/smoothMap) with:
+You can install the released version of `smoothMap` from [Github](https://github.com/lydiaPenglish/smoothMap) with:
 ``` r
 devtools::install_github("lydiaPenglish/smoothMap")
 ```
