@@ -15,7 +15,7 @@
 #'     coord_fixed()
 team_4 <- function(file, tolerance){
     # initial checks
-    checkmate::assertNumber(tolerance)
+    checkmate::assertNumber(tolerance, lower = 0)
     if(tolerance > 0.5){
       warning("Tolerance above 0.5 may result in map losing features")
     }
