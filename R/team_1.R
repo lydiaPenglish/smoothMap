@@ -46,8 +46,3 @@ team_1 <- function(file, tolerance = 0.1) {
     dplyr::mutate(group = dplyr::row_number()) %>%
     tidyr::unnest()
 }
-
-# usethis::use_pipe()
-# devtools::document()
-# usethis::use_testthat()
-# usethis::use_test("team_2")
