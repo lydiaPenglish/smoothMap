@@ -28,18 +28,27 @@ devtools::install_github("lydiaPenglish/smoothMap")
 ```
 
 ## Example
-This is a basic example which shows you how to solve a common problem:
+This is a basic example which shows you how to use the functions in `smoothMap`:
 
 ```{r example}
 library(smoothMap)
-filename <- system.file("extdata", "gadm36_AUS_1.shp", package = "smoothMap")
+library(ggplot2)
 
-dat <- team_1(filename, tolerance = 0.1)
-if (require(ggplot2))
-  ggplot(dat, aes(x = long, y = lat, group = group)) +
-    geom_polygon(color = "black", fill = "white", size = 0.2) +
-    labs(x = "Longitude", y = "Latitude", title = "Australia") +
-    coord_fixed() +
-    theme_bw() +
-    theme(plot.title = element_text(hjust = 0.5))
+mex_file <- system.file("extdata", "gadm36_MEX_1.shp", package = "smoothMap")
+mex_data <- team_1(mex_file, tolerance = 0.05)
+ggplot(mex_data, aes(x = long, y = lat, group = group)) +
+  geom_polygon(color = "black", fill = "white", size = 0.2) +
+  labs(x = "Longitude", y = "Latitude", title = "Mexico") +
+  coord_fixed() +
+  theme_bw() +
+  theme(plot.title = element_text(hjust = 0.5))
+
+pan_file <- system.file("extdata", "gadm36_PAN_1.shp", package = "smoothMap")
+pan_data <- team_4(pan_file, tolerance = 0.01)
+ggplot(pan_data, aes(x = long, y = lat, group = group)) +
+  geom_polygon(color = "black", fill = "white", size = 0.2) +
+  labs(x = "Longitude", y = "Latitude", title = "Panama") +
+  coord_fixed() +
+  theme_bw() +
+  theme(plot.title = element_text(hjust = 0.5))
 ```

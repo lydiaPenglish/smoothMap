@@ -6,20 +6,21 @@ if(getRversion() >= "2.15.1")  utils::globalVariables(c(".", "geometry"))
 #'
 #' See \href{https://github.com/lydiaPenglish/smoothMap}{smoothMap}.
 #'
-#' @param file The name of the .shp file which the data are to be read from.
+#' @param file The name of the shape (.shp) file which the data are to be read from.
 #' @param tolerance The tolerance value in the metric of the input object.
-#'
 #' @return A data frame.
+#'
 #' @importFrom methods as
 #' @export
+#' @author Yang Qiao
 #'
 #' @examples
-#' filename <- system.file("extdata", "gadm36_AUS_1.shp", package = "smoothMap")
+#' filename <- system.file("extdata", "gadm36_MEX_1.shp", package = "smoothMap")
 #' dat <- team_1(filename, tolerance = 0.1)
 #' if (require(ggplot2))
 #'   ggplot(dat, aes(x = long, y = lat, group = group)) +
 #'     geom_polygon(color = "black", fill = "white", size = 0.2) +
-#'     labs(x = "Longitude", y = "Latitude", title = "Australia") +
+#'     labs(x = "Longitude", y = "Latitude", title = "Mexico") +
 #'     coord_fixed()
 team_1 <- function(file, tolerance = 0.1) {
   poly2df <- function(feature) {
@@ -29,6 +30,9 @@ team_1 <- function(file, tolerance = 0.1) {
       purrr::flatten() %>%
       dplyr::tibble(poly = .)
   }
+
+  checkmate::assert_file_exists(file, extension = "shp")
+  checkmate::assert_number(tolerance, lower = 0, finite = T)
 
   data <- sf::read_sf(file)
   oz <- maptools::thinnedSpatialPoly(as(data, "Spatial"),
@@ -46,4 +50,4 @@ team_1 <- function(file, tolerance = 0.1) {
 # usethis::use_pipe()
 # devtools::document()
 # usethis::use_testthat()
-# usethis::use_test("team_1")
+# usethis::use_test("team_2")

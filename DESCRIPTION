@@ -2,10 +2,12 @@ Package: smoothMap
 Type: Package
 Title: Generate Map Datafile
 Version: 0.1.0
-Author: Lydia English, Yang Qiao, Xiyuan Sun
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Authors@R: c(
+    person("Lydia", "English", email = "example@example.com", role = c("aut", "cre")),
+    person("Yang", "Qiao", email = "example@example.com", role = "aut"),
+    person("Xiyuan", "Sun", email = "example@example.com", role = "aut"))
+Description: STAT 585 lab3 group4 package
+    Contains functions to help map files.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
@@ -20,9 +22,8 @@ Imports:
     tidyr,
     sf,
     rgeos,
-    maptools, 
-    checkmate, 
+    maptools,
+    checkmate,
     tibble
 Suggests: 
     testthat
-    

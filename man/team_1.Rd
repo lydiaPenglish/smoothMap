@@ -7,7 +7,7 @@
 team_1(file, tolerance = 0.1)
 }
 \arguments{
-\item{file}{The name of the .shp file which the data are to be read from.}
+\item{file}{The name of the shape (.shp) file which the data are to be read from.}
 
 \item{tolerance}{The tolerance value in the metric of the input object.}
 }
@@ -20,11 +20,14 @@ Read a shape file and create a data frame by reforming geometry column to longit
 See \href{https://github.com/lydiaPenglish/smoothMap}{smoothMap}.
 }
 \examples{
-filename <- system.file("extdata", "gadm36_AUS_1.shp", package = "smoothMap")
+filename <- system.file("extdata", "gadm36_MEX_1.shp", package = "smoothMap")
 dat <- team_1(filename, tolerance = 0.1)
 if (require(ggplot2))
   ggplot(dat, aes(x = long, y = lat, group = group)) +
     geom_polygon(color = "black", fill = "white", size = 0.2) +
-    labs(x = "Longitude", y = "Latitude", title = "Australia") +
+    labs(x = "Longitude", y = "Latitude", title = "Mexico") +
     coord_fixed()
+}
+\author{
+Yang Qiao
 }
