@@ -26,3 +26,6 @@ ggplot(dat, aes(x = long, y = lat, group = group)) +
     labs(x = "Longitude", y = "Latitude", title = "Panama") +
     coord_fixed()
 }
+\author{
+Xiyuan Sun ,\email{xiyuansu@iastate.edu}
+}

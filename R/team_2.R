@@ -5,7 +5,7 @@
 #'
 #' @return A dataframe with lat and long coordinates to plot a map
 #' @export
-#'
+#' @author Xiyuan Sun ,\email{xiyuansu@iastate.edu}
 #' @examples
 #' filename <- system.file("extdata", "gadm36_CUB_1.shp", package = "smoothMap")
 #' dat <- team_2(filename, tolerance = 0.01)

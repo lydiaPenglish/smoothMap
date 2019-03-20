@@ -3,9 +3,9 @@ Type: Package
 Title: Generate Map Datafile
 Version: 0.1.0
 Authors@R: c(
-    person("Lydia", "English", email = "example@example.com", role = c("aut", "cre")),
-    person("Yang", "Qiao", email = "example@example.com", role = "aut"),
-    person("Xiyuan", "Sun", email = "example@example.com", role = "aut"))
+    person("Lydia", "English", email = "lenglish@iastate.edu", role = c("aut", "cre")),
+    person("Yang", "Qiao", email = "qiaoyang@iastate.edu", role = "aut"),
+    person("Xiyuan", "Sun", email = "xiyuansu@iastate.edu", role = "aut"))
 Description: STAT 585 lab3 group4 package
     Contains functions to help map files.
 License: GPL-3
