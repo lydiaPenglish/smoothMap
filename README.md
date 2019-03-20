@@ -46,6 +46,19 @@ ggplot(isl_data, aes(x = long, y = lat, group = group)) +
 <img src="README_files/figure-html/example-1.png" style="display: block; margin: auto;" />
 
 ```r
+cub_file <- system.file("extdata", "gadm36_CUB_1.shp", package = "smoothMap")
+cub_data <- team_2(cub_file, tolerance = 0.01)
+ggplot(cub_data, aes(x = long, y = lat, group = group)) +
+  geom_polygon(color = "black", fill = "white", size = 0.2) +
+  labs(x = "Longitude", y = "Latitude", title = "Cuba") +
+  coord_quickmap() +
+  theme_bw() +
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
+<img src="README_files/figure-html/example-2.png" style="display: block; margin: auto;" />
+
+```r
 pan_file <- system.file("extdata", "gadm36_PAN_1.shp", package = "smoothMap")
 pan_data <- team_4(pan_file, tolerance = 0.01)
 ggplot(pan_data, aes(x = long, y = lat, group = group)) +
@@ -56,4 +69,4 @@ ggplot(pan_data, aes(x = long, y = lat, group = group)) +
   theme(plot.title = element_text(hjust = 0.5))
 ```
 
-<img src="README_files/figure-html/example-2.png" style="display: block; margin: auto;" />
+<img src="README_files/figure-html/example-3.png" style="display: block; margin: auto;" />
