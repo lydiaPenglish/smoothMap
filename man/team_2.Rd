@@ -21,9 +21,9 @@ Generating dataframes from shapefiles for smooth maps
 filename <- system.file("extdata", "gadm36_CUB_1.shp", package = "smoothMap")
 dat <- team_2(filename, tolerance = 0.01)
 if (require(ggplot2))
-ggplot(dat, aes(x = long, y = lat, group = group)) +
+  ggplot(dat, aes(x = long, y = lat, group = group)) +
     geom_polygon(color = "black", fill = "white", size = 0.2) +
-    labs(x = "Longitude", y = "Latitude", title = "Panama") +
+    labs(x = "Longitude", y = "Latitude", title = "Cuba") +
     coord_fixed()
 }
 \author{
