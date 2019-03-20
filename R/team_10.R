@@ -9,7 +9,7 @@
 #' @author Xiyuan Sun
 #'
 #' @examples
-#' filename <- system.file("extdata", "gadm36_ISL_1.shp", package = "smoothMap")
+#' filename <- system.file("extdata", "gadm36_CUB_1.shp", package = "smoothMap")
 #' dat <- team_10(filename, tolerance = 0.01)
 #' if (require(ggplot2))
 #'   ggplot(dat, aes(x = long, y = lat, group = group)) +
