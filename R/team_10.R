@@ -48,7 +48,7 @@ team_10 <- function(file, tolerance){
   shpSmall <- shpSmall %>%
     dplyr::mutate(coord = coord %>%
                     purrr::map(.f = function(m) tibble::as_tibble(m)),group = dplyr::row_number()) %>%
-    tidyr::unnest %>%
+    tidyr::unnest() %>%
     stats::setNames(c("name", "region","group", "long", "lat"))
 
   return(shpSmall)
