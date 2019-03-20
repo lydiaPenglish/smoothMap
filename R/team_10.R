@@ -41,7 +41,7 @@ team_10 <- function(file, tolerance){
     dplyr::group_by() %>%
     dplyr::mutate(coord = geometry %>%
                     purrr::map(.f = function(m) purrr::flatten(.x=m)),
-                  region = dplyr::row_number())%>% tidyr::unnest
+                  region = dplyr::row_number())%>% tidyr::unnest()
 
   sf::st_geometry(shpSmall) <- NULL
 
